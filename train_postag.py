@@ -41,4 +41,33 @@ def train_postag(corpus="dataset/postagged.txt"):
 
 	save_obj(PB(data), "tagger")
 
-train_postag()
+
+"""
+"""
+def train_postag2(corpus="dataset/postag_ui.txt"):
+	global TAGGER
+	data = []
+
+	print "read file..."
+	f = open(corpus)
+	lines = f.read().split('\n\n')
+	f.close()
+
+	for line in lines:
+		fx_line = line.split('\n')
+
+		sen_tag = []
+		for _word in fx_line:
+			word_tag = _word.split("\t")
+			word = word_tag[0]
+			tag  = word_tag[1]
+			sen_tag.append((word, tag))
+
+		data.append(sen_tag)
+
+	print "end read file"
+	print "training pos tagger..."
+	save_obj(PB(data), "tagger2")
+	print "end training pos tagger"
+
+train_postag2()

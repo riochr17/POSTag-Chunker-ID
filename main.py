@@ -108,5 +108,21 @@ print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
 kalimat = "Indeks Keuangan dari 100 laba bank-bank dan peruhaan asuransi terbesar menambah 2,19 menjadi 447,76 ."
 print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
 
+# Test kalimat ketiga
+kalimat = "Binatang ini tidak bisa dibunuh karena masyarakat India menganggap mereka suci ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
+# Test kalimat ketiga
+kalimat = "Pemkot telah menempatkan ikan di berbagai genangan air untuk memangsa telur nyamuk ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
+# Test kalimat ketiga
+kalimat = "Seorang juru bicara bagi pasukan pimpinan Hamas tak bisa diperoleh komentar -nya mengenai hal itu ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
+# Test kalimat ketiga
+kalimat = "Pengacara Tyson , Tom Marlowe belum dapat dimintai konfirmasi ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
 
 
