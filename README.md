@@ -16,6 +16,20 @@ $ -- Test POSTagger & Chunker
 $ python main.py
 ```
 
+```python
+# Test kalimat pertama
+kalimat = "Richard Winger , rekan di Boston Consulting Group , menambahkan : Belakangan ini , sangat populer jika menghias diri anda dengan bendera ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
+# output: [Richard Winger] [,] [rekan] [di Boston Consulting Group] [,] [menambahkan] [:] [Belakangan ini] [,] [sangat] [populer] [jika] [menghias] [diri] [anda] [dengan bendera] [.] 
+
+# Test kalimat kedua
+kalimat = "Indeks Keuangan dari 100 laba bank-bank dan peruhaan asuransi terbesar menambah 2,19 menjadi 447,76 ."
+print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+
+# output: [Indeks Keuangan] [dari 100 laba] [bank-bank] [dan] [peruhaan asuransi terbesar] [menambah] [2,19] [menjadi 447,76] [.] 
+```
+
 ## Contributing
 
 1. Fork it!
