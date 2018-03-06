@@ -51,3 +51,8 @@ http://ieeexplore.ieee.org/document/7803103/
 HMM-PoS-Tagger
 
 https://github.com/rickardlofberg/HMM-PoS-Tagger
+
+idn-tagged-corpus
+
+https://github.com/famrashel/idn-tagged-corpus
+
