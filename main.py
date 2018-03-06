@@ -30,7 +30,7 @@ def format_to_re(format):
 	for i in range(0, len(parts), 2):
 		parts[i] = re.escape(parts[i])
 
-	return ''.join(parts).replace('\\', '')
+	return ' '.join(parts).replace('\\', '')
 
 """
 Mengubah tree POS Tag menjadi tree chunk
