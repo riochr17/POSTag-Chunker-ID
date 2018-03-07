@@ -31,12 +31,15 @@ class Chunker:
 	"""
 	def __init__(self):
 		# Memuat data pre-trained POS-Tagger
-		# uni, bi, tri, word = load_obj("tagger")
-		# TAGGER = Tagger(uni, bi, tri, word)
+		uni, bi, tri, word = self.load_obj("tagger")
+		self.TAGGER1 = Tagger(uni, bi, tri, word)
 
-		self.TAGGER = CRFTagger()
-		self.TAGGER.set_model_file('dataset/all_indo_man_tag_corpus_model.crf.tagger')
-		# hasil = ct.tag_sents([[unicode('Saya'),unicode('bekerja'),unicode('di'),unicode('Bandung')]])
+		# Memuat data pre-trained POS-Tagger
+		uni2, bi2, tri2, word2 = self.load_obj("tagger2")
+		self.TAGGER2 = Tagger(uni2, bi2, tri2, word2)
+
+		self.TAGGER3 = CRFTagger()
+		self.TAGGER3.set_model_file('dataset/all_indo_man_tag_corpus_model.crf.tagger')
 
 		# Memuat data grammar chunker
 		self.load_chunker()
@@ -114,16 +117,26 @@ class Chunker:
 	Melakukan chunking kalimat
 	Mengembalikan chunk Tree
 	"""
-	def chunk_me(self, _str):
-		return self.CHUNK_PARSER.parse(self.TAGGER.tagSentence(_str.split(" ")))
+	def chunk_me1(self, _str):
+		return self.CHUNK_PARSER.parse(self.TAGGER1.tagSentence(_str.split(" ")))
 
+	"""
+	Memberi POSTag pada setiap kata pada kalimat
+	Melakukan chunking kalimat
+	Mengembalikan chunk Tree
+	"""
 	def chunk_me2(self, _str):
+		return self.CHUNK_PARSER.parse(self.TAGGER2.tagSentence(_str.split(" ")))
+
+	"""
+	"""
+	def chunk_me3(self, _str):
 		_strs = _str.split(" ")
 		strs = []
 		for s in _strs:
 			strs.append(unicode(s))
 
-		return self.CHUNK_PARSER.parse(self.TAGGER.tag_sents([strs])[0])
+		return self.CHUNK_PARSER.parse(self.TAGGER3.tag_sents([strs])[0])
 
 
 	# # Test kalimat pertama

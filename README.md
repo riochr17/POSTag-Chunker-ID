@@ -17,17 +17,21 @@ $ python main.py
 ```
 
 ```python
-# Test kalimat pertama
+ch = Chunker()
 kalimat = "Richard Winger , rekan di Boston Consulting Group , menambahkan : Belakangan ini , sangat populer jika menghias diri anda dengan bendera ."
-print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
 
-# output: [Richard Winger] [,] [rekan] [di Boston Consulting Group] [,] [menambahkan] [:] [Belakangan ini] [,] [sangat] [populer] [jika] [menghias] [diri] [anda] [dengan bendera] [.] 
+# Terdapat 3 jenis chunker berdasarkan POS Tagger yang digunakan
 
-# Test kalimat kedua
-kalimat = "Indeks Keuangan dari 100 laba bank-bank dan peruhaan asuransi terbesar menambah 2,19 menjadi 447,76 ."
-print beautify(get_only_str(tree_to_str(chunk_me(kalimat))))
+# Chunker dengan POS Tagger HMM menggunakan data One Million POS Taggged Corpus of Bahasa Indonesia
+print ch.tree_to_str(ch.chunk_me1(kalimat))
 
-# output: [Indeks Keuangan] [dari 100 laba] [bank-bank] [dan] [peruhaan asuransi terbesar] [menambah] [2,19] [menjadi 447,76] [.] 
+# Chunker dengan POS Tagger HMM menggunakan data idn-tagged-corpus
+print ch.tree_to_str(ch.chunk_me2(kalimat))
+
+# Chunker dengan POS Tagger pretrained model CRFTagger
+print ch.tree_to_str(ch.chunk_me3(kalimat))
+
+# cara ketika terlihat lebih baik
 ```
 
 ## Contributing
@@ -56,3 +60,6 @@ idn-tagged-corpus
 
 https://github.com/famrashel/idn-tagged-corpus
 
+POS Tagger Bahasa Indonesia dengan Python
+
+https://yudiwbs.wordpress.com/2018/02/20/pos-tagger-bahasa-indonesia-dengan-pytho/
