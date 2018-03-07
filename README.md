@@ -35,8 +35,8 @@ print ch.tree_to_str(ch.chunk_me3(kalimat))
 ```
 
 
-Saya menyediakan sebuah live server untuk mengakses chunker ini lewat API 
-dengan format request sebagai berikut:
+Live server chunker API 
+request:
 ```
 POST /chunk HTTP/1.1
 Host: rio.southeastasia.cloudapp.azure.com:5000
@@ -47,7 +47,7 @@ Content-Type: application/json
 }
 ```
 
-dan response
+response:
 ```
 POST /chunk HTTP/1.1
 Host: rio.southeastasia.cloudapp.azure.com:5000
