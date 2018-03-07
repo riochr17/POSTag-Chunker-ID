@@ -31,7 +31,7 @@ print ch.tree_to_str(ch.chunk_me2(kalimat))
 # Chunker dengan POS Tagger pretrained model CRFTagger
 print ch.tree_to_str(ch.chunk_me3(kalimat))
 
-# cara ketika terlihat lebih baik
+# cara ketiga terlihat lebih baik
 ```
 
 
