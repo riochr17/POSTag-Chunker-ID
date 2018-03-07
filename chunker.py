@@ -18,8 +18,9 @@ except ImportError:
 """
 """
 class MarkPlaceholders(dict):
+	self.UNIQ='_UNIQUE_STRING_'
 	def __getitem__(self, key):
-		return UNIQ+('(?P<%s>.*?)'%key)+UNIQ
+		return self.UNIQ+('(?P<%s>.*?)'%key)+self.UNIQ
 
 """
 """
