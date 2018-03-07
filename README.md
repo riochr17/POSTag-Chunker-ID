@@ -34,6 +34,30 @@ print ch.tree_to_str(ch.chunk_me3(kalimat))
 # cara ketika terlihat lebih baik
 ```
 
+
+Saya menyediakan sebuah live server untuk mengakses chunker ini lewat API 
+dengan format request sebagai berikut:
+```
+POST /chunk HTTP/1.1
+Host: rio.southeastasia.cloudapp.azure.com:5000
+Content-Type: application/json
+
+{
+	"kalimat":"Indeks Keuangan dari 100 laba bank-bank dan peruhaan asuransi terbesar menambah 2,19 menjadi 447,76 ."
+}
+```
+
+dan response
+```
+POST /chunk HTTP/1.1
+Host: rio.southeastasia.cloudapp.azure.com:5000
+Content-Type: text/html
+
+[(u'Indeks Keuangan', u'NP'), (u'dari', 'IN'), (u'100', 'CD'), (u'laba bank-bank dan peruhaan asuransi terbesar', u'NP'), (u'menambah', 'VB'), (u'2,19', 'CD'), (u'menjadi', 'VB'), (u'447,76', 'CD'), (u'.', 'Z')]
+```
+
+
+
 ## Contributing
 
 1. Fork it!
