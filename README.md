@@ -4,7 +4,12 @@ POSTagger (Part of Speech Tagger) dengan metode HMM menggunakan korpus [**One Mi
 
 ## Installation
 
-Pastikan ada `nltk`
+`nltk`
+
+
+```bash
+pip install python-crfsuite
+```
 
 ## Usage
 
